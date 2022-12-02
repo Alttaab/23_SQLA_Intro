@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+Edit '{{ tag.name }}' Tag
+
+{% endblock title %}
+
+{% block content %}
+
+<h1>Edit '{{ tag.name }}' Tag</h1>
+
+<form method="POST">
+    <div class="form-group row">
+        <div class="col-m-9">
+            <label for="name">Tag: </label>
+            <input type="text" name="name" minlength="3" maxlength="25" value="{{tag.name}}" />
+        </div>
+        <br />
+    </div>
+    <div class="form-group row">
+        <div class="ml-auto mr-3">
+            <button class="btn btn-danger btn-sm" formaction="/tags/{{ tag.id }}/delete" formmethod="POST">
+                Delete
+            </button>
+            <a href="/tags/{{ tag.id }}" class="btn btn-outline-info btn-sm">Cancel</a> <button type="submit" class="btn btn-success btn-sm">Edit
+                Tag</button>
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

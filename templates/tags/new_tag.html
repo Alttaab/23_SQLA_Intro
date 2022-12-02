@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %}Create a New Tag{% endblock title %}
+{% block content %}
+
+<h1>Create a New Tag</h1>
+
+<form method="POST">
+  <div class="form-group row">
+    <div class="ml-auto mr-3">
+      <label for="name">Tag: </label
+      ><input type="text" name="name" minlength="3" maxlength="25" /><br />
+      <small id="tagnameHelp" class="form-text text-muted"
+        >Tags must be a minimum of 3 characters, and can be a maximum of 25
+        characters.</small
+      >
+    </div>
+    <br /><br />
+  </div>
+  <div class="form-group row">
+    <div class="ml-auto mr-3">
+      <a href="/tags" class="btn btn-outline-info btn-sm">Cancel</a>
+      <button type="submit" class="btn btn-success btn-sm">Add Tag</button>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}
