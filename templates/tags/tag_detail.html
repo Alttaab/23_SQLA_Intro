@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts Tagged with {{ tag.name }}{% endblock title %}
+
+{% block content %}
+
+<h1>Posts Tagged with {{ tag.name }}</h1>
+<a href="/tags/{{tag.id}}/edit"class="btn btn-primary">edit tag</a>
+<ul>
+  
+  {% for post in tag.posts %}
+  <blockquote class="blockquote">
+    <p class="mb-0"><a class="font-weight-bold" href="/posts/{{post.id}}"><large>{{ post.title }}</large></a></p>{% if post.tags %}
+    {% for tag in post.tags %}<a href='/tags/{{tag.id}}'><span class="badge bg-primary">{{tag.name}}</span></a>
+    {% endfor %}<br>{% endif %}
+    <span class="font-weight-light text-muted"><em><small>posted by 
+      <a href="/users/{{ post.user.id }}">
+      <img class="rounded-circle" src="{{ post.user.image_url }}" width="20px" height="20px" alt="{{ post.user.full_name }}"> {{post.user.full_name}}</a> on {{ post.readable_date_created }}</em></small></span>
+  </blockquote>
+  {% endfor %}
+</ul>
+
+{% endblock content %}

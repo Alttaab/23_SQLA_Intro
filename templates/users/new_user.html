@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %}Create a New User{% endblock title %}
+{% block content %}
+
+<h1>Create a New User</h1>
+
+<form method="POST">
+  <div class="container">
+    <div class="form-group mb-3">
+      <label for="first_name">First Name: </label
+      ><input type="text" name="first_name" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+      <label for="last_name">Last Name: </label
+      ><input type="text" name="last_name" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+      <label for="image_url">Profile Picture URL: </label
+      ><input type="text" name="image_url" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">submit</button>
+  </div>
+</form>
+
+{% endblock content %}
